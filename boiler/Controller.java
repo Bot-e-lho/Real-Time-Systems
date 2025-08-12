@@ -41,8 +41,9 @@ public class Controller {
         if (mode != Mode.INITIALIZATION) {
             safetyViolation =
                 (level != null && (level <= boiler.M1 || level >= boiler.M2)) ||
-                (level == null && vapor != null && vapor > boiler.V * 1.5) ||
-                (level == null && vapor == null);
+                (level == null && (vapor == null || (vapor != null && vapor > boiler.V * 1.5)));
+        } else {
+             safetyViolation = (level == null || (vapor != null && vapor > 0));
         }
 
         if (safetyViolation) {
@@ -57,13 +58,8 @@ public class Controller {
                 if (safeCycles >= SAFE_CYCLES_NEEDED) {
                     System.out.println("[RECOVER] Condição de segurança restaurada.");
                     if (levelSensor.isWorking()) {
-                        if (pumpsWorking() < 2) {
-                            mode = Mode.DEGRADED;
-                            System.out.println("[RECOVER] Transicionando para DEGRADADO.");
-                        } else {
-                            mode = Mode.NORMAL;
-                            System.out.println("[RECOVER] Transicionando para NORMAL.");
-                        }
+                        mode = (pumpsWorking() < 2) ? Mode.DEGRADED : Mode.NORMAL;
+                        System.out.println("[RECOVER] Transicionando para " + mode);
                     } else {
                         mode = Mode.SALVAMENTO;
                         System.out.println("[RECOVER] Sensor de nível falho. Transicionando para SALVAMENTO.");
@@ -75,24 +71,42 @@ public class Controller {
             }
         }
 
-        if (!safetyViolation) {
-            if (!levelSensor.isWorking() && mode != Mode.SALVAMENTO) {
-                System.out.println("[MODO] Falha no sensor de nivel -> SALVAMENTO");
+        if (mode != Mode.EMERGENCY_STOP && mode != Mode.INITIALIZATION) {
+            if (!levelSensor.isWorking()) {
+                if (mode != Mode.SALVAMENTO) {
+                    System.out.println("[MODO] Falha no sensor de nível -> SALVAMENTO");
+                }
                 mode = Mode.SALVAMENTO;
             } else if (mode == Mode.SALVAMENTO && levelSensor.isWorking()) {
                 mode = (pumpsWorking() < 2) ? Mode.DEGRADED : Mode.NORMAL;
                 System.out.println("[MODO] Sensor de nivel reparado -> " + mode);
-            } else if (pumpsWorking() < 2 && mode != Mode.DEGRADED && mode != Mode.SALVAMENTO) {
+            } else if (pumpsWorking() < 2) {
+                if (mode != Mode.DEGRADED) {
+                    System.out.println("[MODO] Entrando em DEGRADADO devido a falha de bomba.");
+                }
                 mode = Mode.DEGRADED;
-                System.out.println("[MODO] Entrando em DEGRADADO devido a falha de bomba.");
             } else if (mode == Mode.DEGRADED && pumpsWorking() == 2) {
                 mode = Mode.NORMAL;
                 System.out.println("[MODO] Recuperado -> NORMAL");
             }
         }
-
+        double currentVaporThroughput = 0.0;
         switch (mode) {
             case INITIALIZATION:
+                if (level != null) {
+                    if (level < boiler.N1) {
+                        pump1.setRunning(true);
+                        pump2.setRunning(true);
+                    } else if (level > boiler.N2) {
+                        valve.open();
+                    } else {
+                        valve.close();
+                        pump1.setRunning(false);
+                        pump2.setRunning(false);
+                        mode = (pumpsWorking() < 2) ? Mode.DEGRADED : Mode.NORMAL;
+                        System.out.println("[INIT] Nível ajustado. Transicionando para: " + mode);
+                    }
+                }
                 if (level == null) {
                     System.out.println("[INIT] Falha de sensor de nível -> EMERGENCY_STOP");
                     mode = Mode.EMERGENCY_STOP;
@@ -103,31 +117,22 @@ public class Controller {
                     mode = Mode.EMERGENCY_STOP;
                     break;
                 }
-                if (level < boiler.N1) {
-                    if (pump1.isWorking()) pump1.setRunning(true);
-                    if (pump2.isWorking()) pump2.setRunning(true);
-                } else if (level > boiler.N2) {
-                    valve.open();
-                } else {
-                    valve.close();
-                    pump1.setRunning(false);
-                    pump2.setRunning(false);
-                    mode = (pumpsWorking() < 2) ? Mode.DEGRADED : Mode.NORMAL;
-                }
                 break;
 
             case EMERGENCY_STOP:
                 pump1.setRunning(false); 
                 pump2.setRunning(false);
-                boiler.setVaporThroughput(0.0);
+                valve.close();
                 log("EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida");
                 break;
 
             case NORMAL:
+                currentVaporThroughput = boiler.V;
                 controlNormal(level);
                 break;
 
             case DEGRADED:
+                currentVaporThroughput = boiler.V;
                 controlDegraded(level);
                 break;
 
@@ -138,15 +143,15 @@ public class Controller {
             default: break;
         }
 
+        boiler.setVaporThroughput(currentVaporThroughput);
         double total = pump1.throughput() + pump2.throughput();
         boiler.setPumpThroughput(total);
-
         log("END cycle pumps=" + pump1.isRunning() + "," + pump2.isRunning() + " throughput=" + String.format("%.2f", total));
     }
 
     private void controlNormal(Double level) {
         if (level == null) {
-            mode = Mode.SALVAMENTO;
+            //mode = Mode.SALVAMENTO;
             return;
         }
 
@@ -158,8 +163,10 @@ public class Controller {
             pump2.setRunning(false);
         } else {
             if (level < boiler.N1 + 50) {
-                 if (pump1.isWorking()) 
+                if (pump1.isWorking()) 
                     pump1.setRunning(true);
+                if (pumpsWorking() == 2) 
+                    pump2.setRunning(false);
             } else if (level > boiler.N2 - 50) {
                  pump1.setRunning(false);
                  pump2.setRunning(false);
@@ -169,32 +176,20 @@ public class Controller {
 
     private void controlDegraded(Double level) {
         Pump avail = pump1.isWorking() ? pump1 : (pump2.isWorking() ? pump2 : null);
-        if (avail == null) { 
-            mode = Mode.EMERGENCY_STOP; 
-            System.out.println("[Degraded] Nenhuma bomba disponivel -> EMERGENCY_STOP"); 
-            return; 
-        }
-        if (level == null) { 
-            mode = Mode.SALVAMENTO; 
-            controlSalvamento(vaporSensor.read()); 
-            return; 
-        }
+        if (avail == null || level == null) 
+            return;
         avail.setRunning(level < boiler.N1);
         Pump other = (avail == pump1) ? pump2 : pump1;
         other.setRunning(false);
     }
 
     private void controlSalvamento(Double vapor) {
-        boiler.setVaporThroughput(0.0);
         Pump candidate = pump1.isWorking() ? pump1 : (pump2.isWorking() ? pump2 : null);
-        if (candidate == null) { 
-            mode = Mode.EMERGENCY_STOP; 
-            System.out.println("[SALVAMENTO] Nenhuma bomba disponivel -> EMERGENCY_STOP"); 
-            return; }
-        boolean shouldRun = boiler.getQ() < boiler.N2;
-        candidate.setRunning(shouldRun);
-        Pump other = (candidate == pump1) ? pump2 : pump1;
-        other.setRunning(false);
+        if (candidate == null)
+            return; 
+        candidate.setRunning(true);
+        if (candidate == pump1) pump2.setRunning(false);
+        else pump1.setRunning(false);
     }
 
     private int pumpsWorking() {
