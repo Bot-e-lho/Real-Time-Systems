@@ -12,6 +12,8 @@ public class Controller {
     private Mode mode = Mode.INITIALIZATION;
     private int safeCycles = 0;
     private static final int SAFE_CYCLES_NEEDED = 3;
+    private static final double HYST = 50.0;
+
 
     public Controller(Boiler b, Pump p1, Pump p2, Sensors.LevelSensor ls, Sensors.VaporSensor vs, EvacuationValve v) {
         this.boiler = b;
@@ -31,20 +33,24 @@ public class Controller {
         Double vapor = vaporSensor.read();
         double totalPumpThroughput = pump1.throughput() + pump2.throughput();
         boiler.setPumpThroughput(totalPumpThroughput);
-        boiler.setVaporThroughput(boiler.V);
-
+        
         log("START cycle mode=" + mode + " level=" + (level==null?"NULL":String.format("%.2f", level))
                 + " vapor=" + (vapor==null?"NULL":String.format("%.2f", vapor))
                 + " pumpsOK=" + pumpsWorking());
 
         boolean safetyViolation = false;
         if (mode != Mode.INITIALIZATION) {
-            safetyViolation =
-                (level != null && (level <= boiler.M1 || level >= boiler.M2)) ||
-                (level == null && (vapor == null || (vapor != null && vapor > boiler.V * 1.5)));
+            boolean levelOutOfBounds = (level != null) && (level <= boiler.M1 || level >= boiler.M2);
+
+            boolean bothSensorsFailed = (level == null && vapor == null);
+
+            boolean vaporTooHigh = (vapor != null && vapor > boiler.V * 1.5);
+
+            safetyViolation = levelOutOfBounds || bothSensorsFailed || vaporTooHigh;
         } else {
-             safetyViolation = (level == null || (vapor != null && vapor > 0));
+            safetyViolation = (level == null || (vapor != null && vapor > 0)); 
         }
+
 
         if (safetyViolation) {
             safeCycles = 0;
@@ -150,29 +156,33 @@ public class Controller {
     }
 
     private void controlNormal(Double level) {
-        if (level == null) {
-            //mode = Mode.SALVAMENTO;
-            return;
-        }
+        if (level == null) return;
 
         if (level < boiler.N1) {
             pump1.setRunning(true);
             pump2.setRunning(true);
-        } else if (level > boiler.N2) {
+            return;
+        }
+        if (level > boiler.N2) {
             pump1.setRunning(false);
             pump2.setRunning(false);
-        } else {
-            if (level < boiler.N1 + 50) {
-                if (pump1.isWorking()) 
-                    pump1.setRunning(true);
-                if (pumpsWorking() == 2) 
-                    pump2.setRunning(false);
-            } else if (level > boiler.N2 - 50) {
-                 pump1.setRunning(false);
-                 pump2.setRunning(false);
+            return;
+        }
+
+        if (level < boiler.N1 + HYST) {
+            if (pump1.isWorking()) {
+                pump1.setRunning(true);
+                pump2.setRunning(false);
+            } else if (pump2.isWorking()) {
+                pump2.setRunning(true);
+                pump1.setRunning(false);
             }
+        } else if (level > boiler.N2 - HYST) {
+            pump1.setRunning(false);
+            pump2.setRunning(false);
         }
     }
+
 
     private void controlDegraded(Double level) {
         Pump avail = pump1.isWorking() ? pump1 : (pump2.isWorking() ? pump2 : null);
