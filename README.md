@@ -26,9 +26,12 @@ O sistema é dividido em duas partes principais: a simulação do sistema físic
 
 #### - Simulator: Orquestra a execução, criando as threads de tempo real para o sistema físico e o controlador, e injetando falhas para testar a resiliência do sistema.
 
-#### Linhas de comando utilizadas:
+### Linhas de comando utilizadas:
+
+#### Compilação:
 
 javac -d . -cp .:/usr/local/jamaica-8.10-1/target/linux-x86_64/lib/rt.jar boiler/*.java
 
 
+#### Execução ( N = 180 -> N = tempo para executar a aplicação)
 /usr/local/jamaica-8.10-1/target/linux-x86_64/bin/jamaicavm_bin   -cp .:/usr/local/jamaica-8.10-1/target/linux-x86_64/lib/rt.jar   boiler.Simulator 180
