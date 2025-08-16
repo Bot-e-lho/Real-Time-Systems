@@ -1,458 +1,339 @@
-/usr/local/jamaica-8.10-1/target/linux-x86_64/bin/jamaicavm_bin   -cp .:/usr/local/jamaica-8.10-1/target/linux-x86_64/lib/rt.jar   boiler.Simulator 180
+ /usr/local/jamaica-8.10-1/target/linux-x86_64/bin/jamaicavm_bin   -cp .:/usr/local/jamaica-8.10-1/target/linux-x86_64/lib/rt.jar   boiler.Simulator 180
 ** JamaicaVM: WARNING: Java realtime priorities >=11 not usable, using priority 10 (cause: Operation not permitted)
-[PHYS] q=500.00 p=0.00 v=0.0
-[22:53:54.341][Controller] START cycle mode=INITIALIZATION level=500.00 vapor=0.00 pumpsOK=2
-[INIT] Nível ajustado. Transicionando para: NORMAL
-[22:53:54.343][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=500.00 p=0.00 v=0.0
-[PHYS] q=500.00 p=0.00 v=0.0
-[PHYS] q=500.00 p=0.00 v=0.0
-[PHYS] q=500.00 p=0.00 v=0.0
-[PHYS] q=500.00 p=0.00 v=0.0
-[22:53:59.294][Controller] START cycle mode=NORMAL level=500.00 vapor=0.00 pumpsOK=2
-[22:53:59.295][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=430.00 p=0.00 v=70.0
-[PHYS] q=360.00 p=0.00 v=70.0
-[PHYS] q=290.00 p=0.00 v=70.0
-[PHYS] q=220.00 p=0.00 v=70.0
-[PHYS] q=150.00 p=0.00 v=70.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:07.225][Controller] START cycle mode=NORMAL level=150.00 vapor=70.00 pumpsOK=2
-[ALERTA] Violação de segurança -> EMERGENCY_STOP
-[22:54:07.226][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:07.226][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:12.225][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=2
-[22:54:12.226][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:12.226][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:17.225][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=2
-[22:54:17.226][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:17.226][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:22.225][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=2
-[22:54:22.225][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:22.226][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:27.225][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=2
-[22:54:27.226][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:27.226][Controller] END cycle pumps=false,false throughput=0.00
+[TF] q=500.00 p=0.00 v=0.0
+[21:44:36.610][Controller] Inicio mode=INITIALIZATION level=500.00 vapor=0.00 pumpsOK=2
+[INIT] Nivel ajustado. Transicionando para: NORMAL
+[21:44:36.611][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=500.00 p=0.00 v=0.0
+[TF] q=500.00 p=0.00 v=0.0
+[TF] q=500.00 p=0.00 v=0.0
+[TF] q=500.00 p=0.00 v=0.0
+[TF] q=500.00 p=0.00 v=0.0
+[21:44:41.569][Controller] Inicio mode=NORMAL level=500.00 vapor=0.00 pumpsOK=2
+[21:44:41.569][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=490.00 p=0.00 v=10.0
+[TF] q=480.00 p=0.00 v=10.0
+[TF] q=470.00 p=0.00 v=10.0
+[TF] q=460.00 p=0.00 v=10.0
+[TF] q=450.00 p=0.00 v=10.0
+[21:44:46.571][Controller] Inicio mode=NORMAL level=450.00 vapor=10.00 pumpsOK=2
+[21:44:46.572][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=440.00 p=0.00 v=10.0
+[TF] q=430.00 p=0.00 v=10.0
+[TF] q=420.00 p=0.00 v=10.0
+[TF] q=410.00 p=0.00 v=10.0
+[TF] q=400.00 p=0.00 v=10.0
+[21:44:51.575][Controller] Inicio mode=NORMAL level=400.00 vapor=10.00 pumpsOK=2
+[21:44:51.576][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=390.00 p=0.00 v=10.0
+[TF] q=380.00 p=0.00 v=10.0
+[TF] q=370.00 p=0.00 v=10.0
+[TF] q=360.00 p=0.00 v=10.0
+[TF] q=350.00 p=0.00 v=10.0
+[21:44:56.575][Controller] Inicio mode=NORMAL level=350.00 vapor=10.00 pumpsOK=2
+[21:44:56.575][Controller] [CONTROL NORMAL] Nivel abaixo de N1. Ligando ambas as bombas.
+[21:44:56.576][Controller] Fim pumps=true,true throughput=0.00
+[TF] q=340.00 p=0.00 v=10.0
+[TF] q=330.00 p=0.00 v=10.0
+[TF] q=320.00 p=0.00 v=10.0
+[TF] q=310.00 p=0.00 v=10.0
+[21:45:01.570][Controller] Inicio mode=NORMAL level=310.00 vapor=10.00 pumpsOK=2
+[21:45:01.571][Controller] [CONTROL NORMAL] Nivel abaixo de N1. Ligando ambas as bombas.
+[21:45:01.571][Controller] Fim pumps=true,true throughput=50.00
+[TF] q=350.00 p=50.00 v=10.0
+[TF] q=390.00 p=50.00 v=10.0
+[TF] q=430.00 p=50.00 v=10.0
+[TF] q=470.00 p=50.00 v=10.0
+[TF] q=510.00 p=50.00 v=10.0
+[TF] q=550.00 p=50.00 v=10.0
+[21:45:09.311][Controller] Inicio mode=NORMAL level=550.00 vapor=10.00 pumpsOK=2
+[21:45:09.311][Controller] Fim pumps=true,true throughput=50.00
+[TF] q=590.00 p=50.00 v=10.0
+[TF] q=630.00 p=50.00 v=10.0
+[TF] q=670.00 p=50.00 v=10.0
+[TF] q=710.00 p=50.00 v=10.0
+[TF] q=750.00 p=50.00 v=10.0
+[21:45:14.311][Controller] Inicio mode=NORMAL level=750.00 vapor=10.00 pumpsOK=2
+[21:45:14.311][Controller] [CONTROL NORMAL] Nivel acima de N2. Desligando ambas as bombas.
+[21:45:14.311][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=740.00 p=0.00 v=10.0
+[TF] q=730.00 p=0.00 v=10.0
+[TF] q=720.00 p=0.00 v=10.0
+[TF] q=710.00 p=0.00 v=10.0
+[TF] q=700.00 p=0.00 v=10.0
+[21:45:19.311][Controller] Inicio mode=NORMAL level=700.00 vapor=10.00 pumpsOK=2
+[21:45:19.312][Controller] [CONTROL NORMAL] Nivel acima de N2. Desligando ambas as bombas.
+[21:45:19.312][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=690.00 p=0.00 v=10.0
 [EVENT] Bomba P1 Falhou
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:32.225][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=1
-[22:54:32.226][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:32.226][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:40.157][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=1
-[22:54:40.157][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:40.158][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:45.156][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=1
-[22:54:45.156][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:45.157][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:50.156][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=1
-[22:54:50.156][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:50.156][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:54:55.156][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=1
-[22:54:55.156][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:54:55.156][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:55:00.156][Controller] START cycle mode=EMERGENCY_STOP level=150.00 vapor=0.00 pumpsOK=1
-[22:55:00.157][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:55:00.158][Controller] END cycle pumps=false,false throughput=0.00
+[TF] q=680.00 p=0.00 v=10.0
+[TF] q=670.00 p=0.00 v=10.0
+[TF] q=660.00 p=0.00 v=10.0
+[TF] q=650.00 p=0.00 v=10.0
+[21:45:24.311][Controller] Inicio mode=NORMAL level=650.00 vapor=10.00 pumpsOK=1
+[MODO] Entrando em DEGRADADO devido a falha de bomba.
+[21:45:24.312][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=640.00 p=0.00 v=10.0
+[TF] q=630.00 p=0.00 v=10.0
+[TF] q=620.00 p=0.00 v=10.0
+[TF] q=610.00 p=0.00 v=10.0
+[TF] q=600.00 p=0.00 v=10.0
+[21:45:29.311][Controller] Inicio mode=DEGRADED level=600.00 vapor=10.00 pumpsOK=1
+[21:45:29.311][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=590.00 p=0.00 v=10.0
+[TF] q=580.00 p=0.00 v=10.0
+[TF] q=570.00 p=0.00 v=10.0
+[TF] q=560.00 p=0.00 v=10.0
+[TF] q=550.00 p=0.00 v=10.0
+[21:45:34.311][Controller] Inicio mode=DEGRADED level=550.00 vapor=10.00 pumpsOK=1
+[21:45:34.311][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=540.00 p=0.00 v=10.0
+[TF] q=530.00 p=0.00 v=10.0
+[TF] q=520.00 p=0.00 v=10.0
+[TF] q=510.00 p=0.00 v=10.0
+[TF] q=500.00 p=0.00 v=10.0
+[21:45:39.311][Controller] Inicio mode=DEGRADED level=500.00 vapor=10.00 pumpsOK=1
+[21:45:39.312][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=490.00 p=0.00 v=10.0
+[TF] q=480.00 p=0.00 v=10.0
+[TF] q=470.00 p=0.00 v=10.0
+[TF] q=460.00 p=0.00 v=10.0
+[TF] q=450.00 p=0.00 v=10.0
+[21:45:47.242][Controller] Inicio mode=DEGRADED level=450.00 vapor=10.00 pumpsOK=1
+[21:45:47.242][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=440.00 p=0.00 v=10.0
+[TF] q=430.00 p=0.00 v=10.0
+[TF] q=420.00 p=0.00 v=10.0
+[TF] q=410.00 p=0.00 v=10.0
+[TF] q=400.00 p=0.00 v=10.0
+[21:45:52.240][Controller] Inicio mode=DEGRADED level=400.00 vapor=10.00 pumpsOK=1
+[21:45:52.240][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=390.00 p=0.00 v=10.0
+[TF] q=380.00 p=0.00 v=10.0
+[TF] q=370.00 p=0.00 v=10.0
+[TF] q=360.00 p=0.00 v=10.0
+[TF] q=350.00 p=0.00 v=10.0
+[21:45:57.241][Controller] Inicio mode=DEGRADED level=350.00 vapor=10.00 pumpsOK=1
+[21:45:57.242][Controller] Fim pumps=false,true throughput=0.00
+[TF] q=340.00 p=0.00 v=10.0
 [SENSOR] Sensor Falhou
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:55:05.156][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=0.00 pumpsOK=1
-[22:55:05.156][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:55:05.157][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:55:10.156][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=0.00 pumpsOK=1
-[22:55:10.156][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:55:10.157][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:55:18.087][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=0.00 pumpsOK=1
-[RECOVER] Condição de segurança restaurada.
-[RECOVER] Sensor de nível falho. Transicionando para SALVAMENTO.
-[22:55:18.087][Controller] END cycle pumps=false,true throughput=0.00
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[PHYS] q=150.00 p=0.00 v=0.0
-[PHYS][ALERT] q <= M1 (150.0)
-[22:55:23.087][Controller] START cycle mode=SALVAMENTO level=NULL vapor=0.00 pumpsOK=1
-[22:55:23.088][Controller] END cycle pumps=false,true throughput=50.00
-[PHYS] q=200.00 p=50.00 v=0.0
-[PHYS] q=250.00 p=50.00 v=0.0
-[PHYS] q=300.00 p=50.00 v=0.0
-[PHYS] q=350.00 p=50.00 v=0.0
-[PHYS] q=400.00 p=50.00 v=0.0
-[22:55:28.087][Controller] START cycle mode=SALVAMENTO level=NULL vapor=0.00 pumpsOK=1
-[22:55:28.087][Controller] END cycle pumps=false,true throughput=50.00
-[PHYS] q=450.00 p=50.00 v=0.0
-[PHYS] q=500.00 p=50.00 v=0.0
-[PHYS] q=550.00 p=50.00 v=0.0
-[PHYS] q=600.00 p=50.00 v=0.0
-[PHYS] q=650.00 p=50.00 v=0.0
-[22:55:33.087][Controller] START cycle mode=SALVAMENTO level=NULL vapor=0.00 pumpsOK=1
-[22:55:33.088][Controller] END cycle pumps=false,true throughput=50.00
-[SENSOR] Vapor sensor falhou
-[PHYS] q=700.00 p=50.00 v=0.0
-[PHYS] q=750.00 p=50.00 v=0.0
-[PHYS] q=800.00 p=50.00 v=0.0
-[PHYS] q=850.00 p=50.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=50.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:55:38.087][Controller] START cycle mode=SALVAMENTO level=NULL vapor=NULL pumpsOK=1
-[ALERTA] Violação de segurança -> EMERGENCY_STOP
-[22:55:38.087][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:55:38.087][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:55:43.086][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=1
-[22:55:43.087][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:55:43.087][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:55:51.018][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=1
-[22:55:51.018][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:55:51.018][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:55:56.018][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=1
-[22:55:56.018][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:55:56.019][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:01.018][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=1
-[22:56:01.018][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:01.019][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:06.017][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=1
-[22:56:06.018][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:06.018][Controller] END cycle pumps=false,false throughput=0.00
-[EVENT] Bomba P1 Reparada
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:11.018][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=2
-[22:56:11.018][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:11.018][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:16.018][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=2
-[22:56:16.018][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:16.019][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:21.018][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=2
-[22:56:21.018][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:21.018][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:28.948][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=2
-[22:56:28.948][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:28.949][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:33.948][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=2
-[22:56:33.948][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:33.949][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:38.948][Controller] START cycle mode=EMERGENCY_STOP level=NULL vapor=NULL pumpsOK=2
-[22:56:38.948][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:38.949][Controller] END cycle pumps=false,false throughput=0.00
+[TF] q=330.00 p=0.00 v=10.0
+[TF] q=320.00 p=0.00 v=10.0
+[TF] q=310.00 p=0.00 v=10.0
+[TF] q=300.00 p=0.00 v=10.0
+[21:46:02.241][Controller] Inicio mode=DEGRADED level=NULL vapor=10.00 pumpsOK=1
+[MODO] Falha no sensor de nivel -> SALVAMENTO
+[21:46:02.241][Controller] [SALVAMENTO] Iniciando estimativa de nivel em: 350.0
+[21:46:02.241][Controller] [SALVAMENTO] Nível estimado: 425.00
+[21:46:02.242][Controller] Fim pumps=false,true throughput=25.00
+[TF] q=315.00 p=25.00 v=10.0
+[TF] q=330.00 p=25.00 v=10.0
+[TF] q=345.00 p=25.00 v=10.0
+[TF] q=360.00 p=25.00 v=10.0
+[TF] q=375.00 p=25.00 v=10.0
+[21:46:07.240][Controller] Inicio mode=SALVAMENTO level=NULL vapor=10.00 pumpsOK=1
+[21:46:07.241][Controller] [SALVAMENTO] Nível estimado: 500.00
+[21:46:07.241][Controller] Fim pumps=false,true throughput=25.00
+[TF] q=390.00 p=25.00 v=10.0
+[TF] q=405.00 p=25.00 v=10.0
+[TF] q=420.00 p=25.00 v=10.0
+[TF] q=435.00 p=25.00 v=10.0
+[TF] q=450.00 p=25.00 v=10.0
+[21:46:12.241][Controller] Inicio mode=SALVAMENTO level=NULL vapor=10.00 pumpsOK=1
+[21:46:12.242][Controller] [SALVAMENTO] Nível estimado: 575.00
+[21:46:12.243][Controller] Fim pumps=false,true throughput=25.00
+[TF] q=465.00 p=25.00 v=10.0
+[TF] q=480.00 p=25.00 v=10.0
+[TF] q=495.00 p=25.00 v=10.0
+[EVENT] Bomba P2 Falhou
+[TF] q=510.00 p=25.00 v=10.0
+[TF] q=525.00 p=25.00 v=10.0
+[21:46:20.097][Controller] Inicio mode=SALVAMENTO level=NULL vapor=10.00 pumpsOK=0
+[21:46:20.097][Controller] [SALVAMENTO] Nenhuma bomba disponivel.
+[21:46:20.098][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=515.00 p=0.00 v=10.0
+[TF] q=505.00 p=0.00 v=10.0
+[TF] q=495.00 p=0.00 v=10.0
+[TF] q=485.00 p=0.00 v=10.0
+[TF] q=475.00 p=0.00 v=10.0
+[21:46:25.097][Controller] Inicio mode=SALVAMENTO level=NULL vapor=10.00 pumpsOK=0
+[21:46:25.097][Controller] [SALVAMENTO] Nenhuma bomba disponivel.
+[21:46:25.097][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=465.00 p=0.00 v=10.0
+[TF] q=455.00 p=0.00 v=10.0
+[TF] q=445.00 p=0.00 v=10.0
+[TF] q=435.00 p=0.00 v=10.0
+[TF] q=425.00 p=0.00 v=10.0
+[21:46:30.097][Controller] Inicio mode=SALVAMENTO level=NULL vapor=10.00 pumpsOK=0
+[21:46:30.097][Controller] [SALVAMENTO] Nenhuma bomba disponivel.
+[21:46:30.097][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=415.00 p=0.00 v=10.0
+[TF] q=405.00 p=0.00 v=10.0
+[TF] q=395.00 p=0.00 v=10.0
+[TF] q=385.00 p=0.00 v=10.0
+[TF] q=375.00 p=0.00 v=10.0
+[21:46:35.098][Controller] Inicio mode=SALVAMENTO level=NULL vapor=10.00 pumpsOK=0
+[21:46:35.098][Controller] [SALVAMENTO] Nenhuma bomba disponivel.
+[21:46:35.099][Controller] Fim pumps=false,false throughput=0.00
 [SENSOR] Sensor Reparado
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:43.948][Controller] START cycle mode=EMERGENCY_STOP level=900.00 vapor=NULL pumpsOK=2
-[22:56:43.948][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:43.949][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:48.948][Controller] START cycle mode=EMERGENCY_STOP level=900.00 vapor=NULL pumpsOK=2
-[22:56:48.948][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:48.949][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:56:53.948][Controller] START cycle mode=EMERGENCY_STOP level=900.00 vapor=NULL pumpsOK=2
-[22:56:53.949][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:56:53.949][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:57:01.879][Controller] START cycle mode=EMERGENCY_STOP level=900.00 vapor=NULL pumpsOK=2
-[22:57:01.880][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:57:01.880][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:57:06.879][Controller] START cycle mode=EMERGENCY_STOP level=900.00 vapor=NULL pumpsOK=2
-[22:57:06.880][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:57:06.880][Controller] END cycle pumps=false,false throughput=0.00
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[PHYS] q=900.00 p=0.00 v=0.0
-[PHYS][ALERT] q >= M2 (850.0)
-[22:57:11.879][Controller] START cycle mode=EMERGENCY_STOP level=900.00 vapor=NULL pumpsOK=2
-[22:57:11.880][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
-[22:57:11.880][Controller] END cycle pumps=false,false throughput=0.00
->>> Requested shutdown after 180s
-Simulator terminated.
+[TF] q=365.00 p=0.00 v=10.0
+[TF] q=355.00 p=0.00 v=10.0
+[TF] q=345.00 p=0.00 v=10.0
+[TF] q=335.00 p=0.00 v=10.0
+[TF] q=325.00 p=0.00 v=10.0
+[21:46:40.097][Controller] Inicio mode=SALVAMENTO level=325.00 vapor=10.00 pumpsOK=0
+[MODO] Sensor de nivel reparado -> DEGRADED
+[21:46:40.098][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=315.00 p=0.00 v=10.0
+[TF] q=305.00 p=0.00 v=10.0
+[TF] q=295.00 p=0.00 v=10.0
+[TF] q=285.00 p=0.00 v=10.0
+[TF] q=275.00 p=0.00 v=10.0
+[21:46:45.106][Controller] Inicio mode=DEGRADED level=275.00 vapor=10.00 pumpsOK=0
+[21:46:45.107][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=265.00 p=0.00 v=10.0
+[TF] q=255.00 p=0.00 v=10.0
+[TF] q=245.00 p=0.00 v=10.0
+[TF] q=235.00 p=0.00 v=10.0
+[TF] q=225.00 p=0.00 v=10.0
+[21:46:53.027][Controller] Inicio mode=DEGRADED level=225.00 vapor=10.00 pumpsOK=0
+[21:46:53.028][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=215.00 p=0.00 v=10.0
+[TF] q=205.00 p=0.00 v=10.0
+[TF] q=195.00 p=0.00 v=10.0
+[TF] q=185.00 p=0.00 v=10.0
+[TF] q=175.00 p=0.00 v=10.0
+[21:46:58.028][Controller] Inicio mode=DEGRADED level=175.00 vapor=10.00 pumpsOK=0
+[21:46:58.028][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=165.00 p=0.00 v=10.0
+[TF] q=155.00 p=0.00 v=10.0
+[TF] q=145.00 p=0.00 v=10.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=135.00 p=0.00 v=10.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=10.0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:03.028][Controller] Inicio mode=DEGRADED level=125.00 vapor=10.00 pumpsOK=0
+[ALERTA] Violacao de seguranca -> EMERGENCY_STOP
+[21:47:03.028][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
+[21:47:03.028][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:08.028][Controller] Inicio mode=EMERGENCY_STOP level=125.00 vapor=0.00 pumpsOK=0
+[21:47:08.028][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
+[21:47:08.028][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[21:47:13.028][Controller] Inicio mode=EMERGENCY_STOP level=125.00 vapor=0.00 pumpsOK=0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:13.028][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
+[21:47:13.028][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:18.027][Controller] Inicio mode=EMERGENCY_STOP level=125.00 vapor=0.00 pumpsOK=0
+[21:47:18.028][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
+[21:47:18.028][Controller] Fim pumps=false,false throughput=0.00
+[SENSOR] Sensor Falhou
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:23.028][Controller] Inicio mode=EMERGENCY_STOP level=NULL vapor=0.00 pumpsOK=0
+[21:47:23.028][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
+[21:47:23.029][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:30.960][Controller] Inicio mode=EMERGENCY_STOP level=NULL vapor=0.00 pumpsOK=0
+[21:47:30.960][Controller] EMERGENCY_STOP: bombas desligadas e vazão de vapor interrompida
+[21:47:30.960][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:35.961][Controller] Inicio mode=EMERGENCY_STOP level=NULL vapor=0.00 pumpsOK=0
+[RECOVER] Sensor de nivel falho. Transicionando para SALVAMENTO para tentar recuperacao.
+[21:47:35.961][Controller] [SALVAMENTO] Iniciando estimativa de nivel em: 125.0
+[21:47:35.961][Controller] [SALVAMENTO] Nenhuma bomba disponivel.
+[21:47:35.962][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:40.960][Controller] Inicio mode=SALVAMENTO level=NULL vapor=0.00 pumpsOK=0
+[21:47:40.961][Controller] [SALVAMENTO] Nenhuma bomba disponivel.
+[21:47:40.961][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:45.961][Controller] Inicio mode=SALVAMENTO level=NULL vapor=0.00 pumpsOK=0
+[21:47:45.961][Controller] [SALVAMENTO] Nenhuma bomba disponivel.
+[21:47:45.962][Controller] Fim pumps=false,false throughput=0.00
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[TF] q=125.00 p=0.00 v=0.0
+[TF][ALERT] q <= M1 (150.0)
+[21:47:50.961][Controller] Inicio mode=SALVAMENTO level=NULL vapor=0.00 pumpsOK=0
+[21:47:50.961][Controller] [SALVAMENTO] Nenhuma bomba disponivel.
+[21:47:50.962][Controller] Fim pumps=false,false throughput=0.00
