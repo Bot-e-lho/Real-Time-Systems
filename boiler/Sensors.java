@@ -1,4 +1,6 @@
 package boiler;
+
+
 public class Sensors {
     public static class LevelSensor {
         private volatile boolean working = true;
