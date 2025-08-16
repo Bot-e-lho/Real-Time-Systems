@@ -7,8 +7,8 @@ public class Boiler {
    public final double M2 = 850.0;
    public final double N1 = 400.0;
    public final double N2 = 600.0;
-   public final double V = 70.0;
-   public final double P = 50.0;
+   public final double V = 10.0; // é 70 mas coloquei 35 pra testar
+   public final double P = 25.0; // é 50 mas coloquei 25 pra testar
    private double q;
    private double p;
    private double v;
