@@ -1,12 +1,14 @@
 package boiler;
 
 import javax.realtime.*;
+
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
 public class Simulator {
 
-    private static final double VALVE_DRAIN_PER_SEC = 100.0;
+    private static final double VALVE_DRAIN_PER_SEC = 10.0;
 
     public static void main(String[] args) throws Exception {
         final Boiler boiler = new Boiler(500.0);
@@ -25,14 +27,14 @@ public class Simulator {
                     if (valve.isOpen()) 
                         boiler.drain(VALVE_DRAIN_PER_SEC);
                     boiler.updateOneSecond();
-                    System.out.println("[PHYS] q=" + String.format("%.2f", boiler.getQ())
+                    System.out.println("[TF] q=" + String.format("%.2f", boiler.getQ())
                             + " p=" + String.format("%.2f", boiler.getP()) + " v=" + boiler.getV());
 
                     if (boiler.isUnderMin()) {
-                        System.out.println("[PHYS][ALERT] q <= M1 (" + boiler.M1 + ")");
+                        System.out.println("[TF][ALERT] q <= M1 (" + boiler.M1 + ")");
                     }
                     if (boiler.isOverMax()) {
-                        System.out.println("[PHYS][ALERT] q >= M2 (" + boiler.M2 + ")");
+                        System.out.println("[TF][ALERT] q >= M2 (" + boiler.M2 + ")");
                     }
                     waitForNextPeriod();
                 }
@@ -50,21 +52,52 @@ public class Simulator {
             }
         };
 
+        final Random random = new Random();
+
         Thread faultInjector = new Thread(() -> {
             try {
-                TimeUnit.SECONDS.sleep(30);
-                p1.fail();
-                TimeUnit.SECONDS.sleep(30);
-                levelSensor.fail();
-                TimeUnit.SECONDS.sleep(30);
-                vaporSensor.fail();
-                // reparos
-                TimeUnit.SECONDS.sleep(30);
-                p1.repair();
-                TimeUnit.SECONDS.sleep(30);
-                levelSensor.repair();
-            } catch (InterruptedException ignored) {}
+                while (!Thread.currentThread().isInterrupted()) {
+                    int sleepTimeSeconds = 10 + random.nextInt(51); 
+                    TimeUnit.SECONDS.sleep(sleepTimeSeconds);
+
+                    int device = random.nextInt(4);
+
+                    switch (device) {
+                        case 0:
+                            if (p1.isWorking()) {
+                                p1.fail();
+                            } else {
+                                p1.repair();
+                            }
+                            break;
+                        case 1:
+                            if (p2.isWorking()) {
+                                p2.fail();
+                            } else {
+                                p2.repair();
+                            }
+                            break;
+                        case 2:
+                            if (levelSensor.isWorking()) {
+                                levelSensor.fail();
+                            } else {
+                                levelSensor.repair();
+                            }
+                            break;
+                        case 3:
+                            if (vaporSensor.isWorking()) {
+                                vaporSensor.fail();
+                            } else {
+                                vaporSensor.repair();
+                            }
+                            break;
+                    }
+                }
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }, "fault-injector");
+
         faultInjector.setDaemon(true);
 
         physicsThread.start();
@@ -75,7 +108,6 @@ public class Simulator {
             try {
                 int runSeconds = Integer.parseInt(args[0]);
                 Thread.sleep(runSeconds * 1000L);
-                System.out.println(">>> Requested shutdown after " + runSeconds + "s");
             } catch (NumberFormatException ignored) {}
             physicsThread.interrupt();
             controlThread.interrupt();
@@ -83,6 +115,5 @@ public class Simulator {
 
         physicsThread.join();
         controlThread.join();
-        System.out.println("Simulator terminated.");
     }
 }
